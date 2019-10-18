@@ -1,0 +1,40 @@
+body {
+    background: #333;
+}
+
+.box {
+    background: white;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation-name: myanimation;            /*Name for keyframe*/
+    animation-duration: 4s;                 /*How long it will take for the animation to finish*/
+    animation-iteration-count: infinite;    /*How many times the animation happens*/
+    /*animation-delay: 1s;*/                /*Sets a delay before the animation starts*/
+    animation-direction: alternate;         /*Changes the direction to first go clockwise then counter-clockwise*/
+    animation-timing-function: linear;      /*It always runs at the same speed = does not slow towards the end*/ 
+    animation-fill-mode: forwards;          /*When the animation ends, the animation style changes stay what they were at keyframe of 100%*/
+}
+
+.box p {
+    margin: 0 auto;
+    text-align: center;
+    color:white;
+}
+
+@keyframes myanimation {
+    0% {background-color: white; left:0px; top:0px; border-radius: 0;}
+    25% {background-color: red; left: 300px; top: 0px; border-radius: 50% 0 0 0;}
+    50% {background-color: green; left: 300px; top: 300px; border-radius: 50% 50% 0 0;}
+    75% {background-color: red; left: 0px; top: 300px; border-radius: 50% 50% 50% 0;}
+    100% {background-color: white; left: 0px; top: 0px; border-radius: 50% 50% 50% 50%;}
+}
+
+/*
+@keyframes myanimation {
+    0% {background-color: white; border-radius: 0;}
+    25% {background-color: red;  border-radius: 50% 0 0 0;}
+    50% {background-color: green; border-radius: 50% 50% 0 0;}
+    75% {background-color: red; border-radius: 50% 50% 50% 0;}
+    100% {background-color: white; border-radius: 50% 50% 50% 50%;}
+}*/
